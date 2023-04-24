@@ -1,0 +1,41 @@
+ques =>1
+var isEqualsJson = (obj1,obj2)=>{ keys1 = Object.keys(obj1); keys2 = Object.keys(obj2);
+
+return keys1.length === keys2.length && Object.keys(obj1).every(key=>obj1[key]==obj2[key]);
+
+}
+
+var obj1={name:"person1",age:5} var obj2={age:5,name:"person1"}
+
+console.log( isEqualsJson(obj1,obj2));
+
+
+ques=> 2
+print flag use the API url=>
+
+
+var request=new XMLHttpRequest();
+request.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+request.send();
+request.onload=function(){
+    var result=JSON.parse(request.response);
+    for(i=0;i<=result.length;i++){
+       console.log(result[i].flag);  
+     }  
+     }
+     
+     
+     
+     ques=>3
+      rest country api print name /region/subregion// population =>
+      
+     var request=new XMLHttpRequest();
+request.open("GET","https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+request.send();
+request.onload=function(){
+    var result=JSON.parse(request.response);
+
+    for( var i=0;i<=result.length;i++){
+        console.log(result[i].name+"/t"+result[i].region+"/t"+result[i].subregion+"/t"+result[i].population);  
+     } 
+  }
